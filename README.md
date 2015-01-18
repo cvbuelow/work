@@ -1,4 +1,3 @@
-Work
-====
+# Work
 
-Samples of angular work done for GM infotainment apps.
+Samples of JavaScript and PHP work.
