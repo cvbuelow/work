@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col-xs-6">
+    <h1>Databases</h1>
+  </div>
+  <div class="col-xs-6 text-right">
+    <a href="#/databases" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Add Database</a>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <ul class="list-group">
+      <li class="list-group-item" ng-repeat="database in databases">
+        <div class="dropdown pull-right">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+            <span class="glyphicon glyphicon-cog"></span>
+            <span class="sr-only">Toggle Dropdown</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-right" role="menu">
+            <li><a href="#/databases/{{database._id}}"><span class="glyphicon glyphicon-pencil"></span> Edit</a></li>
+            <li><a href="" ng-click="deleteDatabase(database)"><span class="glyphicon glyphicon-trash"></span> Delete</a></li>
+          </ul>
+        </div>
+
+        <h4><a href="#/databases/{{database._id}}/list-tables">{{database.displayName}}</a></h4>
+      </li>
+    </ul>
+  </div>
+</div>

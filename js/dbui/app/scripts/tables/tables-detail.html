@@ -1,0 +1,30 @@
+<div class="page-header">
+  <h1>
+    <span ng-if="tableId">Update</span>
+    <span ng-if="!tableId">Add</span> Table</h1>
+</div>
+
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a>Setup</a></li>
+  <li><a ng-href="#/tables/{{tableId}}/fields">Fields</a></li>
+</ul>
+
+<form name="form" ng-submit="save()" novalidate>
+
+  <div class="form-group">
+    <label class="control-label">Remote Table</label>
+    <select class="form-control" ng-model="table.remoteTable" ng-options="value for value in remoteTables" required></select>
+    <div class="small red" ng-hide="form.remoteTable.$valid">Required</div>
+  </div>
+
+  <div class="form-group">
+    <label for="displayName" class="control-label">Display Name</label>
+    <input type="text" class="form-control" id="displayName" ng-model="table.displayName" required>
+    <div class="small red" ng-hide="form.displayName.$valid">Required</div>
+  </div>
+
+  <div class="form-group text-right">
+    <button class="btn btn-primary" type="submit">Save</button>
+  </div>
+
+</form>

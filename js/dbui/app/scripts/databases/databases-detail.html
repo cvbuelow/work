@@ -1,0 +1,69 @@
+<form name="form" ng-submit="save()" novalidate>
+  <div class="page-header">
+    <h1>
+      <span ng-if="databaseId">Update</span>
+      <span ng-if="!databaseId">Add</span> Database
+    </h1>
+  </div>
+
+  <div class="form-group">
+    <label for="displayName" class="control-label">Display Name</label>
+    <input type="text" class="form-control" id="displayName" ng-model="database.displayName" required>
+    <div class="small red" ng-hide="form.displayName.$valid">Required</div>
+  </div>
+
+  <div class="form-group" ng-class="{
+    'has-error' : form.hostname.$invalid && form.hostname.$dirty,
+    'has-success' : form.hostname.$valid}">
+    <label for="hostname" class="control-label">Host</label>
+    <input type="text" class="form-control" id="hostname" ng-model="database.hostname" required placeholder="127.0.0.1">
+    <div class="small red" ng-hide="form.hostname.$valid">Required</div>
+  </div>
+
+  <div class="form-group">
+    <label for="username" class="control-label">Username</label>
+    <input type="text" class="form-control" id="username" ng-model="database.username" required>
+  </div>
+
+  <div class="form-group">
+    <label for="password" class="control-label">Password</label>
+    <input type="password" class="form-control" id="password" ng-model="database.password" required>
+  </div>
+
+  <div class="form-group">
+    <label for="name" class="control-label">Database Name</label>
+    <input type="text" class="form-control" id="name" ng-model="database.name" required>
+  </div>
+
+  <div class="form-group">
+    <label for="port" class="control-label">Port</label>
+    <input type="text" class="form-control" id="port" ng-model="database.port" required placeholder="3306">
+  </div>
+
+  <div class="form-group">
+    <label for="sshHost" class="control-label">SSH Host</label>
+    <input type="text" class="form-control" id="sshHost" ng-model="database.sshHost" required>
+  </div>
+
+  <div class="form-group">
+    <label for="sshPort" class="control-label">SSH Port</label>
+    <input type="text" class="form-control" id="sshPort" ng-model="database.sshPort" required placeholder="22">
+  </div>
+
+  <div class="form-group">
+    <label for="sshUser" class="control-label">SSH Username</label>
+    <input type="text" class="form-control" id="sshUser" ng-model="database.sshUser" required>
+  </div>
+
+  <div class="form-group">
+    <label for="sshPass" class="control-label">SSH Password</label>
+    <input type="password" class="form-control" id="sshPass" ng-model="database.sshPass" required>
+  </div>
+
+
+  <div class="form-group text-right">
+    <button class="btn btn-default" type="button" ng-click="test()">Test</button>
+    <button class="btn btn-primary" type="submit">Save</button>
+  </div>
+
+</form>
